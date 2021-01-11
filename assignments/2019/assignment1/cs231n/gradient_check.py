@@ -1,9 +1,9 @@
 from __future__ import print_function
+
 from builtins import range
-from past.builtins import xrange
+from random import randrange
 
 import numpy as np
-from random import randrange
 
 
 def eval_numerical_gradient(f, x, verbose=True, h=0.00001):
@@ -127,4 +127,4 @@ def grad_check_sparse(f, x, analytic_grad, num_checks=10, h=1e-5):
         rel_error = (abs(grad_numerical - grad_analytic) /
                     (abs(grad_numerical) + abs(grad_analytic)))
         print('numerical: %f analytic: %f, relative error: %e'
-              %(grad_numerical, grad_analytic, rel_error))
+              % (grad_numerical, grad_analytic, rel_error))

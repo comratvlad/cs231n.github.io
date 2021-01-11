@@ -1,4 +1,5 @@
 from builtins import range
+
 import numpy as np
 
 
@@ -77,7 +78,7 @@ def svm_loss_vectorized(W, X, y, reg):
     s = np.dot(X, W)
     s_y = s[np.arange(num_train), y]
     loss = np.sum(np.maximum(0, s - np.expand_dims(s_y, 1) + 1)) / num_train
-    loss -= 1  # do not count y_i
+    loss -= 1
     loss += reg * np.sum(W * W)
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
